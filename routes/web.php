@@ -17,8 +17,17 @@ Route::get('/', function () {
 
 Route::get('index',['as'=>'trang-chu','uses'=>'PageController@getIndex']);
 
-Route::get('loai-san-pham',['as'=>'loaisanpham', 'uses'=>'PageController@getLoaiSp']);
+Route::get('loai-san-pham/{type}',['as'=>'loaisanpham', 'uses'=>'PageController@getLoaiSp']);
 
-Route::get('chitiet-san-pham',['as'=>'chitietsanpham', 'uses'=>'PageController@getChitiet']);
+Route::get('chitiet-san-pham/{id}',['as'=>'chitietsanpham', 'uses'=>'PageController@getChitiet']);
 
 Route::get('lien-he',['as'=>'lienhe', 'uses'=>'PageController@getLienHe']);
+
+Route::get('gioi-thieu',['as'=>'gioithieu', 'uses'=>'PageController@getGioiThieu']);
+
+Route::get('dang-nhap',['as' => 'login','uses' => 'PageController@getLogin']);
+
+Route::post('dang-nhap',['as' => 'login','uses' => 'PageController@postLogin']);
+
+Route::get('dang-ky',['as' => 'signup','uses' => 'PageController@getSignup']);
+
